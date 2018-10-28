@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $(window).on('load', function() {
-    $('.form-challenge').show();
-    $('.display').hide();
+    $('.form-challenge').hide();
+    $('.display').show();
     $('.sub-section')
       .children()
       .children()
