@@ -1,6 +1,5 @@
 $(document).ready(function() {
   $(window).on('load', function() {
-    $('.form-challenge').hide();
     $('.display').show();
     $('.sub-section')
       .children()
