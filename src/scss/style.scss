@@ -1,0 +1,146 @@
+$tablet-width: 600px;
+$desktop-width: 1000px;
+
+@mixin tablet {
+  @media (min-width: $tablet-width) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: $desktop-width) {
+    @content;
+  }
+}
+
+.grid {
+  .grid-item,
+  .grid-sizer {
+    width: 50%;
+    img {
+      width: 100%;
+    }
+    @include tablet {
+      width: 33.33%;
+    }
+    @include desktop() {
+      width: 20%;
+    }
+  }
+
+  .grid-item--width2 {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+    @include tablet {
+      width: 66.66%;
+    }
+    @include desktop() {
+      width: 40%;
+    }
+  }
+}
+
+.columns {
+  column-count: 2;
+  column-gap: 0;
+  .grid-item {
+    break-inside: avoid;
+    width: 50vw;
+    img {
+      width: 100%;
+    }
+  }
+  @include tablet {
+    column-count: 3;
+    .grid-item {
+      width: 33.33vw;
+    }
+  }
+  @include desktop() {
+    column-count: 5;
+    .grid-item {
+      width: 20vw;
+    }
+  }
+}
+
+.form-challenge {
+  border: #94989e50 2px solid;
+  margin: 0 auto;
+  width: 90vw;
+  margin-top: 10px;
+  position: relative;
+  .container {
+    .checkbox-container {
+      border: #94989e50 1px solid;
+      border-radius: 10%;
+      height: 30px;
+      display: flex;
+      align-items: center;
+      padding: 0 25px;
+      margin-top: 5px;
+      white-space: nowrap;
+      @include tablet {
+        padding: 0 5px;
+        margin: 0 5px 0 0;
+      }
+    }
+    section {
+      border-bottom: #94989e50 1px solid;
+      margin-top: 10px;
+      padding: 10px 0;
+      h3 {
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+      .form-check {
+        display: inline-block;
+      }
+      p {
+        margin-bottom: 10px;
+      }
+      .section-body {
+        padding-left: 20px;
+      }
+      .sub-section {
+        padding: 20px 0 0 20px;
+        .sub-question {
+          padding-left: 20px;
+          div {
+            margin-bottom: 10px;
+          }
+          @include desktop() {
+            display: flex;
+            flex-wrap: wrap;
+            & > div {
+              width: 50%;
+            }
+          }
+        }
+      }
+    }
+    .disabled {
+      pointer-events: none;
+      opacity: 0.4;
+    }
+  }
+  .terms {
+    header {
+      border-bottom: #94989e50 1px solid;
+      padding-bottom: 5px;
+    }
+  }
+
+  .not-terms {
+    margin-bottom: 70px;
+  }
+
+  button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0 10px 10px 0;
+  }
+}
