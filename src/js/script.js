@@ -10,7 +10,6 @@ $(document).ready(function() {
 
   $(window).resize(function() {
     $('.grid').isotope('layout');
-    console.log($(window).width());
     $(window).width() < 600
       ? $('.form-check-inline')
           .addClass('form-check')
